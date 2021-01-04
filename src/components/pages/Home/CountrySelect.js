@@ -27,7 +27,6 @@ export default function CountrySelect(props) {
     <Autocomplete
       onChange={props.changeStateFunction} // prints the selected value
       id="country-select-demo"
-      style={{ "background-color": "white" }}
       options={usStates}
       classes={classes}
       autoHighlight

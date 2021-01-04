@@ -23,16 +23,14 @@ function Navbar() {
           <i className="fas fa-times"></i>
         </div>
         <Link to="/about" className="listItem">
-          About
+          About Us
         </Link>
 
         <Link to="/glossary" className="listItem">
           Glossary
         </Link>
 
-        <Link to="/compare-hospitals" className="listItem">
-          Compare Hospitals
-        </Link>
+       
       </ul>
     </nav>
   );

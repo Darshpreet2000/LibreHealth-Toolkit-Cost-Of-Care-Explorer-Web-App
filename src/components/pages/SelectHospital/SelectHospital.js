@@ -1,6 +1,6 @@
 import React, { useEffect } from "react";
 import "./SelectHospital.css";
-import NavBarOrange from "../NavBar/NavbarOrange";
+import NavBarOrange from "../../NavBar/NavbarOrange";
 import HospitalList from "./SelectHospitalList/HospitalList";
 function SelectHospital(match) {
   const stateName = match.match.params.id;
@@ -11,7 +11,6 @@ function SelectHospital(match) {
   return (
     <div className="selectHospital">
       <NavBarOrange />
-      <h2>Available Hospitals for {stateName}</h2>
       <div className="hospitalContent">
         <HospitalList stateName={stateName} />
       </div>

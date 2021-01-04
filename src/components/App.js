@@ -1,14 +1,15 @@
 import React from "react";
 import Footer from "./Footer/Footer";
-import Home from "./Home/Home";
+import Home from "./pages/Home/Home";
 import { ThemeProvider, createMuiTheme } from "@material-ui/core";
 import { HospitalProvider } from "../context/HospitalContext";
-import SelectHospital from "../components/SelectHospital/SelectHospital";
+import SelectHospital from "../components/pages/SelectHospital/SelectHospital";
 import { Route } from "react-router-dom";
 import "./App.css";
 import About from "./pages/About/About";
 import Glossary from "./pages/Glossary/Glossary";
-import CompareHospitals from "./pages/CompareHospitals/CompareHospitals";
+import ViewChargemaster from "./pages/ViewChargemaster/ViewChargemaster";
+import CompareProcedure from "./pages/CompareProcedure/CompareProcedure"
 const theme = createMuiTheme({
   palette: {
     primary: {
@@ -26,14 +27,12 @@ function App() {
         <ThemeProvider theme={theme}>
           <HospitalProvider>
             <Route exact path="/" component={Home} />
-            <Route path="/selectState=:id" component={SelectHospital} />
+            <Route path="/selectState=:id/hospital=:name" component={ViewChargemaster} />
+            <Route exact path="/selectState=:id" component={SelectHospital} />
+            <Route exact path="/selectState=:id/compare" component={CompareProcedure} />
             <Route exact path="/about" component={About} />
             <Route exact path="/glossary" component={Glossary} />
-            <Route
-              exact
-              path="/compare-hospitals"
-              component={CompareHospitals}
-            />
+        
           </HospitalProvider>
         </ThemeProvider>
       </div>

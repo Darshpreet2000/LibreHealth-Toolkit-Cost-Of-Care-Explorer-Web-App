@@ -23,16 +23,13 @@ function NavbarOrange() {
         </div>
 
         <Link to="/about" className="listItemOrange">
-          About
+          About Us
         </Link>
 
         <Link to="/glossary" className="listItemOrange">
           Glossary
         </Link>
 
-        <Link to="/compare-hospitals" className="listItemOrange">
-          Compare Hospitals
-        </Link>
       </ul>
     </nav>
   );
