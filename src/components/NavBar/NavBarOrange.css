@@ -1,0 +1,114 @@
+.navBarOrange {
+  height: 60px;
+  /* box-shadow: 0 2px 4px 0 rgba(0,0,0,.2); */
+  padding: 0.5rem calc((100vw - 1000px) / 100);
+
+  top: 0;
+  border-bottom: 4px solid orange;
+}
+img {
+  align-items: center;
+  text-decoration: none;
+  padding: 0 1rem;
+  height: 90%;
+  cursor: pointer;
+}
+.navItemsOrange {
+  list-style: none;
+  float: right;
+  padding-right: 1rem;
+}
+.openNavItemsOrange {
+  list-style: none;
+  float: right;
+}
+.listItemOrange {
+  color: darkorange;
+  display: inline-block;
+  text-decoration: none;
+  cursor: pointer;
+  padding: 0 1.4rem;
+}
+.listItemOrange:hover {
+  transform: scale(1.08);
+}
+
+.navMenuOrange {
+  display: none;
+}
+@media screen and (max-width: 900px) {
+  .navMenuOrange {
+    z-index: 50;
+    -webkit-tap-highlight-color: transparent;
+    float: right;
+    display: block;
+    margin-top: 5px;
+    font-size: 30px;
+    color: orange;
+    margin-right: 10px;
+    cursor: pointer;
+  }
+  .navItemsOrange {
+    margin-top: 0;
+    display: block;
+    z-index: 50;
+    list-style: none;
+    height: 100vh;
+    width: 100%;
+    position: fixed;
+    background-color: white;
+    text-align: left;
+    top: 0;
+    right: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: left;
+    transition: all 0.5s ease-in;
+    transform: translateX(100%);
+  }
+  .openNavItemsOrange {
+    margin-top: 0;
+    margin-left: 0;
+    padding-left: 0;
+    display: block;
+    z-index: 50;
+    list-style: none;
+    height: 100vh;
+    width: 100%;
+    position: fixed;
+    background-color: white;
+    text-align: left;
+    top: 0;
+    right: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: left;
+    transition: all 0.3s ease-in;
+    transform: translateX(20%);
+  }
+  .listItemOrange {
+    color: #000;
+    display: flex;
+    align-items: center;
+    padding-left: 8%;
+    height: 10%;
+  }
+  .navMenuOrange {
+    padding-top: 2%;
+    padding-left: 5%;
+    padding-bottom: 5%;
+    cursor: pointer;
+    color: orange;
+  }
+
+  .navBarOrange {
+    height: 60px;
+    /* box-shadow: 0 2px 4px 0 rgba(0,0,0,.2); */
+  }
+  .listItemOrange:hover,
+  .listItemOrangeactive {
+    color: white;
+    background-color: darkorange;
+    transform: scale(1);
+  }
+}

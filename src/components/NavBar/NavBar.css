@@ -1,0 +1,128 @@
+.navBar {
+  height: 60px;
+  /* box-shadow: 0 2px 4px 0 rgba(0,0,0,.2); */
+
+  padding: 0.5rem calc((100vw - 1000px) / 100);
+
+  top: 0;
+}
+img {
+  color: #000;
+  align-items: center;
+  text-decoration: none;
+  padding: 0 1rem;
+  height: 90%;
+  cursor: pointer;
+}
+.navItems {
+  list-style: none;
+  float: right;
+  padding-right: 1rem;
+}
+.openNavItems {
+  list-style: none;
+  float: right;
+}
+.listItem {
+  color: white;
+
+  display: inline-block;
+  text-decoration: none;
+  padding: 0 1.4rem;
+  cursor: pointer;
+  font-size: large;
+  font-weight: 500;
+}
+.listItem:hover {
+  transform: scale(1.08);
+}
+
+.navMenu {
+  display: none;
+}
+@media screen and (max-width: 900px) {
+  .hold {
+    background-position: center;
+  }
+  .navMenu {
+    z-index: 50;
+    -webkit-tap-highlight-color: transparent;
+    float: right;
+    display: block;
+    margin-top: 5px;
+    font-size: 30px;
+    color: white;
+    margin-right: 10px;
+    cursor: pointer;
+  }
+  .navItems {
+    margin-top: 0;
+    display: block;
+    z-index: 50;
+    list-style: none;
+    height: 100vh;
+    width: 100%;
+    position: fixed;
+    background-color: white;
+    text-align: left;
+    top: 0;
+    right: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: left;
+    transition: all 0.5s ease-in;
+    transform: translateX(100%);
+  }
+  .openNavItems {
+    margin-top: 0;
+    margin-left: 0;
+    padding-left: 0;
+    display: block;
+    z-index: 50;
+    list-style: none;
+    height: 100vh;
+    width: 100%;
+    position: fixed;
+    background-color: white;
+    text-align: left;
+    top: 0;
+    right: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: left;
+    transition: all 0.3s ease-in;
+    transform: translateX(20%);
+  }
+  .listItem {
+    color: #000;
+    display: flex;
+    align-items: center;
+    padding-left: 8%;
+    height: 10%;
+  }
+  .openNavItems > .navMenu {
+    padding-top: 2%;
+    padding-left: 5%;
+    padding-bottom: 5%;
+    cursor: pointer;
+    color: black;
+  }
+
+  .navItems > .navMenu {
+    padding-top: 2%;
+    padding-left: 5%;
+    padding-bottom: 5%;
+    cursor: pointer;
+    color: black;
+  }
+  .navBar {
+    height: 60px;
+    /* box-shadow: 0 2px 4px 0 rgba(0,0,0,.2); */
+  }
+  .listItem:hover,
+  .listItem:active {
+    color: white;
+    background-color: #146a5d;
+    transform: scale(1);
+  }
+}
