@@ -1,0 +1,20 @@
+.secondaryItem {
+  padding: 10px;
+  display: flex;
+
+  flex-wrap: wrap;
+}
+.list {
+  display: flex;
+  width: 100%;
+  padding: 10px;
+  justify-content: space-between;
+  flex-direction: column;
+}
+.hospitalName {
+  text-align: center;
+  align-self: center;
+  flex-wrap: wrap;
+}
+.address {
+}
