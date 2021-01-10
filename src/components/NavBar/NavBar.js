@@ -10,27 +10,25 @@ function Navbar() {
     setOpen(!open);
   }
   return (
-    <nav className="navBar">
+    <nav className="nav-bar">
       <Link to="/">
         <img src={whiteLogo} alt="logo" />
       </Link>
-      <div className="navMenu" onClick={handleClick}>
+      <div className="nav-menu" onClick={handleClick}>
         <i className="fa fa-bars"></i>
       </div>
 
-      <ul className={open ? "openNavItems" : "navItems"}>
-        <div className="navMenu" onClick={handleClick}>
+      <ul className={open ? "open-nav-items" : "nav-items"}>
+        <div className="nav-menu" onClick={handleClick}>
           <i className="fas fa-times"></i>
         </div>
-        <Link to="/about" className="listItem">
+        <Link to="/about" className="list-item">
           About Us
         </Link>
 
-        <Link to="/glossary" className="listItem">
+        <Link to="/glossary" className="list-item">
           Glossary
         </Link>
-
-       
       </ul>
     </nav>
   );

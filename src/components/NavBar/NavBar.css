@@ -1,4 +1,4 @@
-.navBar {
+.nav-bar {
   height: 60px;
   /* box-shadow: 0 2px 4px 0 rgba(0,0,0,.2); */
 
@@ -14,16 +14,16 @@ img {
   height: 90%;
   cursor: pointer;
 }
-.navItems {
+.nav-items {
   list-style: none;
   float: right;
   padding-right: 1rem;
 }
-.openNavItems {
+.open-nav-items {
   list-style: none;
   float: right;
 }
-.listItem {
+.list-item {
   color: white;
 
   display: inline-block;
@@ -33,18 +33,18 @@ img {
   font-size: large;
   font-weight: 500;
 }
-.listItem:hover {
+.list-item:hover {
   transform: scale(1.08);
 }
 
-.navMenu {
+.nav-menu {
   display: none;
 }
 @media screen and (max-width: 900px) {
   .hold {
     background-position: center;
   }
-  .navMenu {
+  .nav-menu {
     z-index: 50;
     -webkit-tap-highlight-color: transparent;
     float: right;
@@ -55,7 +55,7 @@ img {
     margin-right: 10px;
     cursor: pointer;
   }
-  .navItems {
+  .nav-items {
     margin-top: 0;
     display: block;
     z-index: 50;
@@ -73,7 +73,7 @@ img {
     transition: all 0.5s ease-in;
     transform: translateX(100%);
   }
-  .openNavItems {
+  .open-nav-items {
     margin-top: 0;
     margin-left: 0;
     padding-left: 0;
@@ -93,14 +93,14 @@ img {
     transition: all 0.3s ease-in;
     transform: translateX(20%);
   }
-  .listItem {
+  .list-item {
     color: #000;
     display: flex;
     align-items: center;
     padding-left: 8%;
     height: 10%;
   }
-  .openNavItems > .navMenu {
+  .open-nav-items > .nav-menu {
     padding-top: 2%;
     padding-left: 5%;
     padding-bottom: 5%;
@@ -108,19 +108,19 @@ img {
     color: black;
   }
 
-  .navItems > .navMenu {
+  .nav-items > .nav-menu {
     padding-top: 2%;
     padding-left: 5%;
     padding-bottom: 5%;
     cursor: pointer;
     color: black;
   }
-  .navBar {
+  .nav-bar {
     height: 60px;
     /* box-shadow: 0 2px 4px 0 rgba(0,0,0,.2); */
   }
-  .listItem:hover,
-  .listItem:active {
+  .list-item:hover,
+  .list-item:active {
     color: white;
     background-color: #146a5d;
     transform: scale(1);
