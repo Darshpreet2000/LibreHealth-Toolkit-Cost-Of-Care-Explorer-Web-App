@@ -1,4 +1,4 @@
-import React, {useState, useEffect } from "react";
+import React, { useState, useEffect } from "react";
 import "./Home.css";
 import CountrySelect from "./CountrySelect";
 import CardContent from "@material-ui/core/CardContent";
@@ -6,7 +6,7 @@ import Button from "@material-ui/core/Button";
 import { makeStyles } from "@material-ui/core/styles";
 import Card from "@material-ui/core/Card";
 import NavBar from "../../NavBar/NavBar.js";
-import {  useHistory } from "react-router-dom";
+import { useHistory } from "react-router-dom";
 import MuiAlert from "@material-ui/lab/Alert";
 import Snackbar from "@material-ui/core/Snackbar";
 function Alert(props) {
@@ -17,7 +17,7 @@ const useStyles = makeStyles((theme) => ({
 }));
 function Home() {
   const classes = useStyles();
-  const [stateName, setStateName] = useState("")
+  const [stateName, setStateName] = useState("");
   const history = useHistory();
   const [displaySnackbar, setDisplaySnackbar] = React.useState(false);
   function changeState(evt, value) {
@@ -28,30 +28,30 @@ function Home() {
   }
   useEffect(() => {
     setStateName(stateName);
-  }, [stateName,setStateName]);
+  }, [stateName, setStateName]);
 
   const searchHospitals = () => {
-    if(stateName.length===0)
-    setDisplaySnackbar(true)
-    else
-    history.push(`/selectState=${stateName}`);
+    if (stateName.length === 0) setDisplaySnackbar(true);
+    else history.push(`/selectState=${stateName}`);
   };
   function handleClose() {
     setDisplaySnackbar(false);
   }
   return (
-    <div className="homePage">
+    <div className="home-page">
       <div className="hold">
         <NavBar />
         <h1>Compare Costs Of Medical Procedures Of US Hospitals</h1>
         <h3>
-        Search over 3,300 U.S. hosptals by region and drill down into the diagnosis costs. Search inpatient procedures, outpatient procedures or compare costs across multiple hospitals.
+          Search over 3,300 U.S. hosptals by region and drill down into the
+          diagnosis costs. Search inpatient procedures, outpatient procedures or
+          compare costs across multiple hospitals.
         </h3>
-        <div className="stateSelect">
+        <div className="state-select">
           <Card className={classes.root} elevation={3}>
             <CardContent>
               <CountrySelect changeStateFunction={changeState} />
-              <div className="searchHospital">
+              <div className="search-hospital">
                 <Button
                   variant="contained"
                   color="primary"
@@ -70,7 +70,7 @@ function Home() {
 
         <hr />
       </div>
-      <div className="introData">
+      <div className="intro-data">
         <p>
           Recent changes in Medicare’s payment policies under the inpatient
           prospective payment system (PPS) and the long-term care hospital PPS
@@ -86,11 +86,15 @@ function Home() {
           hospitals chargemasters & can sort data by Category or sort by price
           in ascending or descending order.
         </p>
-        <Snackbar open={displaySnackbar} autoHideDuration={3000} onClose={handleClose}>
-        <Alert severity="error" onClose={handleClose} >
-           {"Please Select a US State"}
-        </Alert>
-      </Snackbar>
+        <Snackbar
+          open={displaySnackbar}
+          autoHideDuration={3000}
+          onClose={handleClose}
+        >
+          <Alert severity="error" onClose={handleClose}>
+            {"Please Select a US State"}
+          </Alert>
+        </Snackbar>
       </div>
     </div>
   );

@@ -9,7 +9,7 @@ import "./App.css";
 import About from "./pages/About/About";
 import Glossary from "./pages/Glossary/Glossary";
 import ViewChargemaster from "./pages/ViewChargemaster/ViewChargemaster";
-import CompareProcedure from "./pages/CompareProcedure/CompareProcedure"
+import CompareProcedure from "./pages/CompareProcedure/CompareProcedure";
 const theme = createMuiTheme({
   palette: {
     primary: {
@@ -27,12 +27,18 @@ function App() {
         <ThemeProvider theme={theme}>
           <HospitalProvider>
             <Route exact path="/" component={Home} />
-            <Route path="/selectState=:id/hospital=:name" component={ViewChargemaster} />
+            <Route
+              path="/selectState=:id/hospital=:name"
+              component={ViewChargemaster}
+            />
             <Route exact path="/selectState=:id" component={SelectHospital} />
-            <Route exact path="/selectState=:id/compare" component={CompareProcedure} />
+            <Route
+              exact
+              path="/selectState=:id/compare"
+              component={CompareProcedure}
+            />
             <Route exact path="/about" component={About} />
             <Route exact path="/glossary" component={Glossary} />
-        
           </HospitalProvider>
         </ThemeProvider>
       </div>

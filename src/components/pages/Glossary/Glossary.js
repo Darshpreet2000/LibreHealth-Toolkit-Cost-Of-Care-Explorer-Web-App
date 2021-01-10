@@ -1,11 +1,10 @@
 import React from "react";
-
+import NavBarOrange from "../../NavBar/NavbarOrange";
+import "./Glossary.css";
 function Glossary() {
   return (
     <div>
-      <h2>Glossary</h2>
-
-      <h2>This Page is Pending</h2>
+      <NavBarOrange />
     </div>
   );
 }

@@ -1,0 +1,23 @@
+.about-section {
+  display: flex;
+  flex-flow: row wrap;
+  margin: 1%;
+}
+.our-mission {
+  flex: 2;
+
+  margin: 8px;
+}
+.contact-us {
+  margin: 8px;
+  flex: 1;
+}
+
+@media screen and (max-width: 800px) {
+  .about-section {
+    display: inline;
+  }
+}
+a {
+  text-decoration: none;
+}

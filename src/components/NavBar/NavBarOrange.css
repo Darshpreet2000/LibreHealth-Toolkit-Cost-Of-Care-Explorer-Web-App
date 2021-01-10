@@ -1,8 +1,9 @@
-.navBarOrange {
-  height: 60px;
+.nav-bar-orange {
   /* box-shadow: 0 2px 4px 0 rgba(0,0,0,.2); */
   padding: 0.5rem calc((100vw - 1000px) / 100);
-
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: space-between;
   top: 0;
   border-bottom: 4px solid orange;
 }
@@ -10,45 +11,63 @@ img {
   align-items: center;
   text-decoration: none;
   padding: 0 1rem;
-  height: 90%;
+  height: 60px;
   cursor: pointer;
 }
-.navItemsOrange {
+.search-bar {
+  width: 40%;
+}
+.nav-items-orange {
   list-style: none;
   float: right;
   padding-right: 1rem;
 }
-.openNavItemsOrange {
+.open-nav-items-orange {
   list-style: none;
   float: right;
 }
-.listItemOrange {
+.list-item-orange {
   color: darkorange;
   display: inline-block;
   text-decoration: none;
   cursor: pointer;
   padding: 0 1.4rem;
 }
-.listItemOrange:hover {
+.list-item-orange:hover {
   transform: scale(1.08);
 }
 
-.navMenuOrange {
+.nav-menu-orange,
+.nav-close-menu-orange,
+.search-bar-no-display {
   display: none;
 }
+
 @media screen and (max-width: 900px) {
-  .navMenuOrange {
+  .search-bar {
+    width: 100%;
+  }
+  .nav-menu-orange {
     z-index: 50;
     -webkit-tap-highlight-color: transparent;
     float: right;
     display: block;
-    margin-top: 5px;
     font-size: 30px;
     color: orange;
     margin-right: 10px;
     cursor: pointer;
   }
-  .navItemsOrange {
+  .nav-close-menu-orange {
+    z-index: 50;
+    -webkit-tap-highlight-color: transparent;
+    float: right;
+    display: block;
+    font-size: 30px;
+    color: orange;
+    margin: 20px;
+    cursor: pointer;
+  }
+  .nav-items-orange {
     margin-top: 0;
     display: block;
     z-index: 50;
@@ -66,7 +85,7 @@ img {
     transition: all 0.5s ease-in;
     transform: translateX(100%);
   }
-  .openNavItemsOrange {
+  .open-nav-items-orange {
     margin-top: 0;
     margin-left: 0;
     padding-left: 0;
@@ -86,27 +105,16 @@ img {
     transition: all 0.3s ease-in;
     transform: translateX(20%);
   }
-  .listItemOrange {
+  .list-item-orange {
     color: #000;
     display: flex;
     align-items: center;
     padding-left: 8%;
     height: 10%;
   }
-  .navMenuOrange {
-    padding-top: 2%;
-    padding-left: 5%;
-    padding-bottom: 5%;
-    cursor: pointer;
-    color: orange;
-  }
 
-  .navBarOrange {
-    height: 60px;
-    /* box-shadow: 0 2px 4px 0 rgba(0,0,0,.2); */
-  }
-  .listItemOrange:hover,
-  .listItemOrangeactive {
+  .list-item-orange:hover,
+  .list-item-orangeactive {
     color: white;
     background-color: darkorange;
     transform: scale(1);

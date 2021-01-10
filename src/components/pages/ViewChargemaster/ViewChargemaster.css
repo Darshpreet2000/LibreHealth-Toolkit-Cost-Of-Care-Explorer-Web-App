@@ -1,7 +1,31 @@
-.listOfCharges{
-    margin: 10px auto;
-    max-width: 1000px;
+.list-of-charges {
+  max-width: 1200px;
+  display: flex;
+  flex-direction: row;
+  margin: 0 auto;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
 }
-.searchBar{
-    margin: 10px;
+.search-bar {
+  margin: 10px;
+}
+.list-ui {
+  width: 100%;
+}
+
+.list-ui-none {
+  display: none;
+}
+.filter-button-small-screen {
+  width: 100%;
+}
+.filter-icon {
+  color: orange;
+}
+.filter-floating-action-button {
+  display: none;
+}
+@media screen and (max-width: 900px) {
+  .filter-floating-action-button {
+    display: block;
+  }
 }

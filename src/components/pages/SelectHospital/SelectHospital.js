@@ -9,9 +9,9 @@ function SelectHospital(match) {
   }, []);
 
   return (
-    <div className="selectHospital">
+    <div className="select-hospital">
       <NavBarOrange />
-      <div className="hospitalContent">
+      <div className="hospital-content">
         <HospitalList stateName={stateName} />
       </div>
     </div>
