@@ -201,8 +201,10 @@ function CompareProcedure(match) {
               className={classes.floating}
               onClick={handleFilterClick}
             >
-              <i className="fas fa-filter"></i>
-              Filter
+              <i   style={{marginRight:'4px'}} className="fas fa-filter"></i>
+           
+                Filter
+             
             </Fab>
           </div>
           {listOfData.length === 0 && searchText.length === 0 && (

@@ -183,7 +183,8 @@ function ViewChargemaster(match) {
               className={classes.floating}
               onClick={handleFilterClick}
             >
-              <i className="fas fa-filter"></i>
+             <i   style={{marginRight:'4px'}} className="fas fa-filter"></i>
+           
               Filter
             </Fab>
           </div>
