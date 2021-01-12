@@ -1,7 +1,6 @@
 import React from "react";
 import NavBarOrange from "../../NavBar/NavbarOrange";
-import "./Glossary.css";
-function Glossary() {
+function InpatientProcedures() {
   return (
     <div>
       <NavBarOrange />
@@ -9,4 +8,4 @@ function Glossary() {
   );
 }
 
-export default Glossary;
+export default InpatientProcedures;

@@ -44,10 +44,12 @@ function CompareProcedure(match) {
     window.scrollTo(0, 0);
   }, []);
   useEffect(() => {
-    let baseUrl = `https://raw.githubusercontent.com/Darshpreet2000/API/master/${stateName}`;
+   
+    let baseUrl = `https://gitlab.com/api/v4/projects/22718139/repository/files/JSON_CDM%2F${stateName}`;
     let arrayOfChargemaster = [];
     arrayOfHospitalName.forEach(async function (object) {
-      const api = baseUrl + `/${object}.json`;
+      const api = baseUrl + `%2F${object}.json/raw?ref=master`;
+      console.log(api)
       try {
         let response = await fetch(api);
         if (response.ok) {
@@ -103,15 +105,16 @@ function CompareProcedure(match) {
       });
     }
 
-    if (Category === "Standard") {
+  
+    if (category === "Inpatient Procedure") {
       for (let i = newList.length - 1; i >= 0; --i) {
-        if (newList[i].Category === "DRG") {
+        if (newList[i].Category === "Outpatient Procedure") {
           newList.splice(i, 1);
         }
       }
-    } else if (category === "DRG") {
+    } else if (category === "Outpatient Procedure") {
       for (let i = newList.length - 1; i >= 0; --i) {
-        if (newList[i].Category === "Standard") {
+        if (newList[i].Category === "Inpatient Procedure") {
           newList.splice(i, 1);
         }
       }

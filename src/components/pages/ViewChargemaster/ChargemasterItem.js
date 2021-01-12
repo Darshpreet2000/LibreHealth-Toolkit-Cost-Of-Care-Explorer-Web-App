@@ -19,6 +19,11 @@ const useStyles = makeStyles((theme) => ({
     color: "#FFA500",
     "font-size": "0.85em",
   },
+  blue:{
+    color: "#2596be",
+    "font-size": "0.85em",
+
+  },
   price: {
     fontWeight: "bold",
     "font-size": "0.87em",
@@ -33,6 +38,7 @@ function ChargemasterItem(props) {
   const classes = useStyles();
   let description = props.object.Description;
   let charge = props.object.Charge;
+  charge=parseFloat(charge).toFixed(2)
   let category = props.object.Category;
   let hospitalName;
   if ("hospitalName" in props.object) hospitalName = props.object.hospitalName;
@@ -60,7 +66,7 @@ function ChargemasterItem(props) {
             </Typography>
           </Grid>
         </Grid>
-        <Typography variant="subtitle2" className={classes.orange}>
+        <Typography variant="subtitle2" className={category==='Inpatient Procedure'?classes.blue:classes.orange}>
           {category}
         </Typography>
         <Typography variant="subtitle2" className={classes.hospitalName}>

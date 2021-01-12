@@ -7,7 +7,8 @@ import SelectHospital from "../components/pages/SelectHospital/SelectHospital";
 import { Route } from "react-router-dom";
 import "./App.css";
 import About from "./pages/About/About";
-import Glossary from "./pages/Glossary/Glossary";
+import InpatientProcedures from "./pages/InpatientProcedures/InpatientProcedure";
+import OutpatientProcedures from "./pages/OutpatientProcedures/OutpaitentProcedures"
 import ViewChargemaster from "./pages/ViewChargemaster/ViewChargemaster";
 import CompareProcedure from "./pages/CompareProcedure/CompareProcedure";
 const theme = createMuiTheme({
@@ -38,7 +39,9 @@ function App() {
               component={CompareProcedure}
             />
             <Route exact path="/about" component={About} />
-            <Route exact path="/glossary" component={Glossary} />
+            <Route exact path="/inpatient-procedures" component={InpatientProcedures} />
+            <Route exact path="/outpatient-procedures" component={OutpatientProcedures} />
+       
           </HospitalProvider>
         </ThemeProvider>
       </div>

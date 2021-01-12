@@ -68,12 +68,12 @@ function Filter(props) {
               onChange={handleCategoryChange}
             >
               <FormControlLabel
-                value="Standard"
+                value="Inpatient Procedure"
                 control={<Radio />}
                 label="Inpatient Procedures"
               />
               <FormControlLabel
-                value="DRG"
+                value="Outpatient Procedure"
                 control={<Radio />}
                 label="Outpatient Procedures"
               />

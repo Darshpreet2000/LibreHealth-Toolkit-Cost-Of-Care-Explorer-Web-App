@@ -25,6 +25,10 @@
   display: none;
 }
 @media screen and (max-width: 900px) {
+  .list-of-charges{
+    
+  box-shadow:none
+  }
   .filter-floating-action-button {
     display: block;
   }

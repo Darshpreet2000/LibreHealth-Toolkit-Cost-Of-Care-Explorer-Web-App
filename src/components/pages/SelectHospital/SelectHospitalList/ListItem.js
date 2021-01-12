@@ -49,7 +49,7 @@ export default function ListItem(props) {
       setDisplaySnackbar("Cannot Compare more than 3 Hospitals");
       return;
     }
-    if (compareButton === false) storedHospitalNames.push(object.name);
+    if (compareButton === false) storedHospitalNames.push(object.Hospital);
     else
       storedHospitalNames.splice(
         storedHospitalNames.indexOf(object.hospitalName),
@@ -65,17 +65,17 @@ export default function ListItem(props) {
     <Grid item xs={12} md={3} sm={4} className={classes.container}>
       <Paper elevation={4} className="list">
         <Typography variant="h6" className={classes.title} gutterBottom>
-          {` ${obj.name}`}
+          {` ${obj.Hospital}`}
         </Typography>
         <Typography
           variant="subtitle1"
           className={classes.address}
           gutterBottom
         >
-          2801 Debarr Road, Anchorage, AK 99508
+           {` ${obj.Address}, ${obj.City}`  }
         </Typography>
         <div className="secondary-item">
-          <Link to={`/selectState=${props.stateName}/hospital=${obj.name}`}>
+          <Link to={`/selectState=${props.stateName}/hospital=${obj.Hospital}`}>
             <Button
               variant="outlined"
               color="secondary"

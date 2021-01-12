@@ -5,11 +5,11 @@ function Footer() {
     <div className="footer">
       <div className="content">
         <h4>About us</h4>
-        <h5>
+        <p>
           LibreHealth is collaborative community for free & open source software
           projects in Health IT, and is a member project of Software Freedom
           Conservancy.
-        </h5>
+        </p>
       </div>
     </div>
   );

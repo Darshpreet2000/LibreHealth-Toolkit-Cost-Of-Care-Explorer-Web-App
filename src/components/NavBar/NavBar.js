@@ -22,13 +22,17 @@ function Navbar() {
         <div className="nav-menu" onClick={handleClick}>
           <i className="fas fa-times"></i>
         </div>
+        <Link to="/inpatient-procedures" className="list-item">
+        Inpatient Procedure
+        </Link>
+        <Link to="/outpatient-procedures"className="list-item">
+        Outpatient Procedure
+        </Link>
         <Link to="/about" className="list-item">
           About Us
         </Link>
 
-        <Link to="/glossary" className="list-item">
-          Glossary
-        </Link>
+      
       </ul>
     </nav>
   );
