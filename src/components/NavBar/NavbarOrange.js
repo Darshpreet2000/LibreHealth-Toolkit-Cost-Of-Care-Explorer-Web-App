@@ -74,6 +74,9 @@ function NavBarOrange(props) {
         <Link to="/outpatient-procedures"className="list-item-orange">
         Outpatient Procedure
         </Link>
+        <Link to="/glosary" className="list-item-orange">
+          Glossary
+        </Link>
         <Link to="/about" className="list-item-orange">
           About Us
         </Link>

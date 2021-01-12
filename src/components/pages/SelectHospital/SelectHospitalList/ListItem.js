@@ -24,15 +24,16 @@ const useStyles = makeStyles((theme) => ({
     "text-align": "center",
     "align-self": "center",
     "flex-wrap": "wrap",
-    fontSize: "1.1em",
-    fontWeight: 520,
+    fontSize: "18px",
+    fontWeight: 500,
+  
   },
   address: {
     "text-align": "center",
     "align-self": "center",
     "flex-wrap": "wrap",
-    fontWeight: 420,
-    fontSize: "0.8em",
+    fontWeight: 400,
+    fontSize: "12px", 'font-family': "'Montserrat', sans-serif"
   },
 }));
 
@@ -68,7 +69,7 @@ export default function ListItem(props) {
           {` ${obj.Hospital}`}
         </Typography>
         <Typography
-          variant="subtitle1"
+          variant="subtitle2"
           className={classes.address}
           gutterBottom
         >

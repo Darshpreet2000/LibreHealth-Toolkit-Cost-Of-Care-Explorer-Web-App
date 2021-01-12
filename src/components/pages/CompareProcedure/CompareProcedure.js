@@ -2,11 +2,10 @@ import React, { useEffect, useContext } from "react";
 import NavBarOrange from "../../NavBar/NavbarOrange";
 import CircularProgress from "@material-ui/core/CircularProgress";
 import { HospitalContext } from "../../../context/HospitalContext";
-import ChargemasterItem from "../ViewChargemaster/ChargemasterItem";
 import Filter from "../../Filter/Filter";
 import Fab from "@material-ui/core/Fab";
 import { makeStyles } from "@material-ui/core/styles";
-import { Category } from "@material-ui/icons";
+import ChargeMasterList from "../../ChargeMasterList/ChargeMasterList"
 const useStyles = makeStyles((theme) => ({
   root: {
     display: "flex",
@@ -19,6 +18,7 @@ const useStyles = makeStyles((theme) => ({
   },
   floating: {
     position: "fixed",
+    zIndex:'90',
     bottom: theme.spacing(2),
     right: theme.spacing(2),
     color: "#fff",
@@ -222,23 +222,8 @@ function CompareProcedure(match) {
               Start typing procedure to search
             </h3>
           )}
-          {listOfData.length === 0 && searchText.length !== 0 && (
-            <h3
-              style={{
-                display: "flex",
-                alignItems: "center",
-                justifyContent: "center",
-                height: "50vh",
-                textAlign: "center",
-              }}
-            >
-              We could not find results matching your requirement. Try changing
-              filter or search query
-            </h3>
-          )}
-          {listOfData.map(function (obj, i) {
-            return <ChargemasterItem object={obj} key={i} />;
-          })}
+         
+          {searchText.length!==0 && <ChargeMasterList listOfData={listOfData}/>}
         </div>
       </div>
     </div>

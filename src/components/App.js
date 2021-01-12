@@ -11,6 +11,7 @@ import InpatientProcedures from "./pages/InpatientProcedures/InpatientProcedure"
 import OutpatientProcedures from "./pages/OutpatientProcedures/OutpaitentProcedures"
 import ViewChargemaster from "./pages/ViewChargemaster/ViewChargemaster";
 import CompareProcedure from "./pages/CompareProcedure/CompareProcedure";
+import Glossary from "./pages/Glossary/Glossary"
 const theme = createMuiTheme({
   palette: {
     primary: {
@@ -41,6 +42,7 @@ function App() {
             <Route exact path="/about" component={About} />
             <Route exact path="/inpatient-procedures" component={InpatientProcedures} />
             <Route exact path="/outpatient-procedures" component={OutpatientProcedures} />
+            <Route exact path="/glossary" component={Glossary} />
        
           </HospitalProvider>
         </ThemeProvider>

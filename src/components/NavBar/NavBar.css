@@ -45,7 +45,7 @@ img {
     background-position: center;
   }
   .nav-menu {
-    z-index: 50;
+    z-index: 100;
     -webkit-tap-highlight-color: transparent;
     float: right;
     display: block;
@@ -58,7 +58,7 @@ img {
   .nav-items {
     margin-top: 0;
     display: block;
-    z-index: 50;
+    z-index: 100;
     list-style: none;
     height: 100vh;
     width: 100%;
@@ -78,7 +78,7 @@ img {
     margin-left: 0;
     padding-left: 0;
     display: block;
-    z-index: 50;
+    z-index: 100;
     list-style: none;
     height: 100vh;
     width: 100%;
@@ -99,6 +99,7 @@ img {
     align-items: center;
     padding-left: 8%;
     height: 10%;
+    font-size: medium;
   }
   .open-nav-items > .nav-menu {
     padding-top: 2%;
@@ -132,7 +133,7 @@ img {
     margin-left: 0;
     padding-left: 0;
     display: block;
-    z-index: 50;
+    z-index: 100;
     list-style: none;
     height: 100vh;
     width: 100%;
@@ -145,6 +146,6 @@ img {
     flex-direction: column;
     align-items: left;
     transition: all 0.3s ease-in;
-    transform: translateX(30%);
+    transform: translateX(25%);
   }
 }

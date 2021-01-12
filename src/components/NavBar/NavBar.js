@@ -27,6 +27,9 @@ function Navbar() {
         </Link>
         <Link to="/outpatient-procedures"className="list-item">
         Outpatient Procedure
+        </Link> 
+        <Link to="/glossary" className="list-item">
+          Glossary
         </Link>
         <Link to="/about" className="list-item">
           About Us

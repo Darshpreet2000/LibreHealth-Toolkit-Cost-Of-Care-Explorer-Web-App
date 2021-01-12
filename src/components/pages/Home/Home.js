@@ -13,7 +13,9 @@ function Alert(props) {
   return <MuiAlert elevation={6} variant="filled" {...props} />;
 }
 const useStyles = makeStyles((theme) => ({
-  root: {},
+  button: {
+    margin:'8px'
+  },
 }));
 function Home() {
   const classes = useStyles();
@@ -39,7 +41,7 @@ function Home() {
   }
   return (
     <div className="home-page">
-      <div className="hold">
+      <div className="home-page-wrapper">
         <NavBar />
         <h1>Compare Costs Of Medical Procedures Of US Hospitals</h1>
         <h3>
@@ -54,6 +56,7 @@ function Home() {
               <div className="search-hospital">
                 <Button
                   variant="contained"
+                  className={classes.button}
                   color="primary"
                   onClick={searchHospitals}
                 >

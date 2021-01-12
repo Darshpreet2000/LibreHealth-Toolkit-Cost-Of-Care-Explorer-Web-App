@@ -5,6 +5,7 @@ import Card from "@material-ui/core/Card";
 import Typography from "@material-ui/core/Typography";
 import { makeStyles } from "@material-ui/core/styles";
 import "./ChargemasterItem.css";
+import { Paper } from "@material-ui/core";
 const useStyles = makeStyles((theme) => ({
   root: {},
   demo: {
@@ -43,9 +44,9 @@ function ChargemasterItem(props) {
   let hospitalName;
   if ("hospitalName" in props.object) hospitalName = props.object.hospitalName;
   return (
-    <Card className="charge-master-grid-item" elevation={3}>
-      <CardContent>
-        <Grid container spacing={2}>
+      <Paper className="charge-master-grid-item" elevation={3}>
+      
+      <Grid container spacing={2}>
           <Grid item xs={8} md={8}>
             <Typography
               variant="subtitle1"
@@ -72,8 +73,7 @@ function ChargemasterItem(props) {
         <Typography variant="subtitle2" className={classes.hospitalName}>
           {hospitalName}
         </Typography>
-      </CardContent>
-    </Card>
+      </Paper>
   );
 }
 
