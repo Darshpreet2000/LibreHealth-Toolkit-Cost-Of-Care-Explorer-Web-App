@@ -1,10 +1,10 @@
-import React,{useEffect} from "react";
-import NavBarOrange from "../../NavBar/NavbarOrange";
+import React, { useEffect } from "react";
+import NavBarOrange from "../../layouts/NavBar/NavbarOrange";
 import CircularProgress from "@material-ui/core/CircularProgress";
-import ChargeMasterList from "../../ChargeMasterList/ChargeMasterList"
-import "./OutpatientProcedure.css"
+import ChargeMasterList from "../../ChargeMasterList/ChargeMasterList";
+import "./OutpatientProcedure.css";
+import Api from "../../../util/Api";
 function OutpatientProcedures() {
-
   const [loading, setLoading] = React.useState(true);
   const [listOfData, setListOfData] = React.useState([]);
   const [originalListOfData, setoriginalListOfData] = React.useState([]);
@@ -12,12 +12,11 @@ function OutpatientProcedures() {
   let handleChange = (event) => {
     let newList = [];
     let search = event.target.value;
-    console.log(search);
+
     if (search.length === 0) {
       originalListOfData.forEach(function (object) {
         newList.push(object);
       });
-     
     } else {
       var re = new RegExp(search, "i");
       originalListOfData.forEach(function (object) {
@@ -26,21 +25,18 @@ function OutpatientProcedures() {
         }
       });
     }
-    
-    setListOfData(newList)
+
+    setListOfData(newList);
   };
   useEffect(() => {
     window.scrollTo(0, 0);
   }, []);
   useEffect(() => {
-  //  let proxy="https://cors-anywhere.herokuapp.com/"
+    let apiUrl = Api.viewOutpatientData;
 
-  let apiUrl =   "https://gitlab.com/api/v4/projects/22718139/repository/files/Summary_Data%2F";
-    apiUrl += `outpatient_summary.json/raw?ref=master`;
-    console.log(apiUrl)
     async function fetchData() {
       try {
-        let response = await fetch(apiUrl,{crossDomain:true,});
+        let response = await fetch(apiUrl, { crossDomain: true });
         if (response.ok) {
           response.json().then((responseJson) => {
             setListOfData(responseJson);
@@ -57,7 +53,7 @@ function OutpatientProcedures() {
       }
     }
     fetchData();
-  },[]);
+  }, []);
   if (error.length > 0)
     return (
       <div>
@@ -93,12 +89,12 @@ function OutpatientProcedures() {
     );
 
   return (
-      <div>
-        <NavBarOrange showSearchBar={true} handleChange={handleChange} />
-           <div className="outpaitent-list">
-           <ChargeMasterList listOfData={listOfData}/>
-           </div>
-          </div>
+    <div>
+      <NavBarOrange showSearchBar={true} handleChange={handleChange} />
+      <div className="outpaitent-list">
+        <ChargeMasterList listOfData={listOfData} />
+      </div>
+    </div>
   );
 }
 

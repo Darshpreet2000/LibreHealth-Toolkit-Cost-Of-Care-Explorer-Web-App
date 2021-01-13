@@ -1,6 +1,6 @@
 import React from "react";
 import "./NavBar.css";
-import whiteLogo from "../../img/libre_white.png";
+import whiteLogo from "../../../img/libre_white.png";
 import { useState } from "react";
 
 import { Link } from "react-router-dom";
@@ -23,19 +23,17 @@ function Navbar() {
           <i className="fas fa-times"></i>
         </div>
         <Link to="/inpatient-procedures" className="list-item">
-        Inpatient Procedure
+          Inpatient Procedure
         </Link>
-        <Link to="/outpatient-procedures"className="list-item">
-        Outpatient Procedure
-        </Link> 
+        <Link to="/outpatient-procedures" className="list-item">
+          Outpatient Procedure
+        </Link>
         <Link to="/glossary" className="list-item">
           Glossary
         </Link>
         <Link to="/about" className="list-item">
           About Us
         </Link>
-
-      
       </ul>
     </nav>
   );

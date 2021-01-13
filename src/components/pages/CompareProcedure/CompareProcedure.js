@@ -1,11 +1,12 @@
 import React, { useEffect, useContext } from "react";
-import NavBarOrange from "../../NavBar/NavbarOrange";
+import NavBarOrange from "../../layouts/NavBar/NavbarOrange";
 import CircularProgress from "@material-ui/core/CircularProgress";
 import { HospitalContext } from "../../../context/HospitalContext";
-import Filter from "../../Filter/Filter";
+import Filter from "../../layouts/Filter/Filter";
 import Fab from "@material-ui/core/Fab";
 import { makeStyles } from "@material-ui/core/styles";
-import ChargeMasterList from "../../ChargeMasterList/ChargeMasterList"
+import ChargeMasterList from "../../ChargeMasterList/ChargeMasterList";
+import Api from "../../../util/Api";
 const useStyles = makeStyles((theme) => ({
   root: {
     display: "flex",
@@ -18,7 +19,7 @@ const useStyles = makeStyles((theme) => ({
   },
   floating: {
     position: "fixed",
-    zIndex:'90',
+    zIndex: "85",
     bottom: theme.spacing(2),
     right: theme.spacing(2),
     color: "#fff",
@@ -44,12 +45,12 @@ function CompareProcedure(match) {
     window.scrollTo(0, 0);
   }, []);
   useEffect(() => {
-   
-    let baseUrl = `https://gitlab.com/api/v4/projects/22718139/repository/files/JSON_CDM%2F${stateName}`;
     let arrayOfChargemaster = [];
     arrayOfHospitalName.forEach(async function (object) {
-      const api = baseUrl + `%2F${object}.json/raw?ref=master`;
-      console.log(api)
+      const api =
+        Api.viewChargeMasterApi +
+        `${stateName}%2F${object}.json/raw?ref=master`;
+
       try {
         let response = await fetch(api);
         if (response.ok) {
@@ -105,7 +106,6 @@ function CompareProcedure(match) {
       });
     }
 
-  
     if (category === "Inpatient Procedure") {
       for (let i = newList.length - 1; i >= 0; --i) {
         if (newList[i].Category === "Outpatient Procedure") {
@@ -196,7 +196,7 @@ function CompareProcedure(match) {
           handleFilterClick={handleFilterClick}
           handleFilterValueChanges={handleFilterValueChanges}
         />
-        <div className={openFilter ? "list-ui-none" : "list-ui"}>
+        <div className="list-ui">
           <div className="filter-floating-action-button">
             <Fab
               variant="extended"
@@ -204,10 +204,8 @@ function CompareProcedure(match) {
               className={classes.floating}
               onClick={handleFilterClick}
             >
-              <i   style={{marginRight:'4px'}} className="fas fa-filter"></i>
-           
-                Filter
-             
+              <i style={{ marginRight: "4px" }} className="fas fa-filter"></i>
+              Filter
             </Fab>
           </div>
           {listOfData.length === 0 && searchText.length === 0 && (
@@ -222,8 +220,10 @@ function CompareProcedure(match) {
               Start typing procedure to search
             </h3>
           )}
-         
-          {searchText.length!==0 && <ChargeMasterList listOfData={listOfData}/>}
+
+          {searchText.length !== 0 && (
+            <ChargeMasterList listOfData={listOfData} />
+          )}
         </div>
       </div>
     </div>

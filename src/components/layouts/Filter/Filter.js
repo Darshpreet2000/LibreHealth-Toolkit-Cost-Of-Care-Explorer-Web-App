@@ -9,7 +9,14 @@ import "./Filter.css";
 const useStyles = makeStyles((theme) => ({
   applyButton: {
     color: "#fff",
+    width:'50%',
+    
+    margin:'8px',
   },
+  clearButton:{
+    margin:'8px',
+    width:'50%'
+  }
 }));
 function Filter(props) {
   const classes = useStyles();
@@ -55,11 +62,11 @@ function Filter(props) {
           </div>
           <span className="filter-text"> Filter</span>
           <div className="filter-icon-close" onClick={handleFilterClick}>
-            <i className="fas fa-times-circle"></i>
+            <i className="fas fa-times-circle" style={{marginRight:'4px'}}></i>
           </div>
         </div>
         <div className="category-content">
-          <FormControl >
+          <FormControl>
             <span id="filter-option"> Category</span>
             <RadioGroup
               aria-label="gender"
@@ -81,7 +88,7 @@ function Filter(props) {
           </FormControl>
         </div>
         <div className="price-content">
-          <FormControl >
+          <FormControl>
             <span id="filter-option"> Order By Price</span>
             <RadioGroup
               aria-label="price"
@@ -103,7 +110,7 @@ function Filter(props) {
           </FormControl>
         </div>
         <div className="filter-buttons">
-          <Button variant="outlined" color="secondary" onClick={clearAllValues}>
+          <Button variant="outlined"   className={classes.clearButton} color="secondary" onClick={clearAllValues}>
             Clear All
           </Button>
           <Button

@@ -1,8 +1,8 @@
 .home-page-wrapper {
-  
   color: #fff;
-  background-image:  url(/src/img/patient.jpg) ;
-  background-position: center;background-size: cover; 
+  background-image: url(/src/img/patient.jpg);
+  background-position: center;
+  background-size: cover;
   background-repeat: no-repeat;
   position: relative;
 }
@@ -39,6 +39,7 @@
 }
 .introduction {
   position: relative;
+  margin-top: 8px;
   top: 30px;
 }
 .introduction h1 {

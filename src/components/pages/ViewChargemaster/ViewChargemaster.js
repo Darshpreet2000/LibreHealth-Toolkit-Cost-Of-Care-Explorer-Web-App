@@ -1,11 +1,12 @@
 import React, { useEffect } from "react";
-import NavBarOrange from "../../NavBar/NavbarOrange";
+import NavBarOrange from "../../layouts/NavBar/NavbarOrange";
 import CircularProgress from "@material-ui/core/CircularProgress";
 import "./ViewChargemaster.css";
-import Filter from "../../Filter/Filter";
+import Filter from "../../layouts/Filter/Filter";
 import Fab from "@material-ui/core/Fab";
 import { makeStyles } from "@material-ui/core/styles";
-import ChargeMasterList from "../../ChargeMasterList/ChargeMasterList"
+import ChargeMasterList from "../../ChargeMasterList/ChargeMasterList";
+import Api from "../../../util/Api";
 const useStyles = makeStyles((theme) => ({
   root: {
     display: "flex",
@@ -18,10 +19,11 @@ const useStyles = makeStyles((theme) => ({
   },
   floating: {
     position: "fixed",
-    zIndex:'90',
-    bottom: theme.spacing(2),
-    right: theme.spacing(2),
+    zIndex: "85",
+    bottom: theme.spacing(3),
+    right: theme.spacing(3),
     color: "#fff",
+    textTransform: "uppercase",
   },
   extendedIcon: {
     marginRight: theme.spacing(1),
@@ -46,14 +48,12 @@ function ViewChargemaster(match) {
     window.scrollTo(0, 0);
   }, []);
   useEffect(() => {
-  //  let proxy="https://cors-anywhere.herokuapp.com/"
-
-  let apiUrl =   "https://gitlab.com/api/v4/projects/22718139/repository/files/JSON_CDM%2F";
+    let apiUrl = Api.viewChargeMasterApi;
     apiUrl += `${stateName}%2F${hospitalName}.json/raw?ref=master`;
-    console.log(apiUrl)
+
     async function fetchData() {
-      try {
-        let response = await fetch(apiUrl,{crossDomain:true,});
+      try { 
+        let response = await fetch(apiUrl, { crossDomain: true });
         if (response.ok) {
           response.json().then((responseJson) => {
             setListOfData(responseJson);
@@ -75,7 +75,7 @@ function ViewChargemaster(match) {
     let newList = [];
     let search = event.target.value;
     setSearchText(search);
-    console.log(search);
+
     if (search.length === 0) {
       originalListOfData.forEach(function (object) {
         newList.push(object);
@@ -135,6 +135,7 @@ function ViewChargemaster(match) {
   };
 
   let handleFilterClick = () => {
+    
     setOpenFilter(!openFilter);
   };
   if (error.length > 0)
@@ -179,21 +180,20 @@ function ViewChargemaster(match) {
           handleFilterClick={handleFilterClick}
           handleFilterValueChanges={handleFilterValueChanges}
         />
-        <div className={openFilter ? "list-ui-none" : "list-ui"}>
-          <div className="filter-floating-action-button">
+        <div className="list-ui">
+          <div className="filter-floating-action-button"   >
             <Fab
               variant="extended"
               color="secondary"
               className={classes.floating}
               onClick={handleFilterClick}
             >
-             <i   style={{marginRight:'4px'}} className="fas fa-filter"></i>
-           
+              <i style={{ marginRight: "4px" }} className="fas fa-filter"></i>
               Filter
             </Fab>
           </div>
-       
-          <ChargeMasterList listOfData={listOfData}/>
+
+          <ChargeMasterList listOfData={listOfData} />
         </div>
       </div>
     </div>

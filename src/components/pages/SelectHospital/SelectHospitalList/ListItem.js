@@ -10,11 +10,13 @@ const useStyles = makeStyles((theme) => ({
   chargeMasterButton: {
     margin: "10px",
     fontSize: "0.8em",
+    textTransform: "uppercase",
   },
   compareButton: {
     color: "#fff",
     margin: "10px",
     fontSize: "0.8em",
+    textTransform: "uppercase",
   },
 
   container: {
@@ -26,14 +28,14 @@ const useStyles = makeStyles((theme) => ({
     "flex-wrap": "wrap",
     fontSize: "18px",
     fontWeight: 500,
-  
   },
   address: {
     "text-align": "center",
     "align-self": "center",
     "flex-wrap": "wrap",
     fontWeight: 400,
-    fontSize: "12px", 'font-family': "'Montserrat', sans-serif"
+    fontSize: "12px",
+    "font-family": "'Montserrat', sans-serif",
   },
 }));
 
@@ -73,7 +75,7 @@ export default function ListItem(props) {
           className={classes.address}
           gutterBottom
         >
-           {` ${obj.Address}, ${obj.City}`  }
+          {` ${obj.Address}, ${obj.City}`}
         </Typography>
         <div className="secondary-item">
           <Link to={`/selectState=${props.stateName}/hospital=${obj.Hospital}`}>

@@ -11,6 +11,7 @@ import MuiAlert from "@material-ui/lab/Alert";
 import Snackbar from "@material-ui/core/Snackbar";
 import List from "@material-ui/core/List";
 import { HospitalContext } from "../../../../context/HospitalContext";
+import Api from "../../../../util/Api";
 function Alert(props) {
   return <MuiAlert elevation={6} variant="filled" {...props} />;
 }
@@ -28,7 +29,7 @@ const useStyles = makeStyles((theme) => ({
   floating: {
     position: "fixed",
     bottom: theme.spacing(2),
-    right: theme.spacing(2),
+    right: theme.spacing(2),textTransform: "uppercase"
   },
   extendedIcon: {
     marginRight: theme.spacing(1),
@@ -59,29 +60,23 @@ const HospitalList = (props) => {
   useEffect(() => {
     setHospitalNamesToCompare([]);
     async function fetchData() {
-      let url =   "https://gitlab.com/api/v4/projects/22718139/repository/files/JSON_CDM%2F";
+      let url = Api.listHospitalApi;
       url += `${stateName}%2Faddress.json/raw?ref=master`;
-   
+
       try {
         var response = await fetch(url);
 
         if (response.ok) {
-
           response.json().then((responseJson) => {
             sethospitalNames(responseJson);
             setLoading(false);
           });
-
-
-
-
-              } else if (response.status === 404) {
-                throw Error("Error 404 Not Found");
-              } else {
-                throw Error("some other error: " + response.status);
-              }
-            }
-       catch (e) {
+        } else if (response.status === 404) {
+          throw Error("Error 404 Not Found");
+        } else {
+          throw Error("some other error: " + response.status);
+        }
+      } catch (e) {
         setError(e.message);
       }
     } // Execute the created function directly
