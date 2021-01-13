@@ -17,7 +17,13 @@ The LibreHealth Cost Of Care Explorer chat channel is on [Librehealth Forums.](h
 
 ## Screenshots
 
-<img src="/assets/home.png">
+|  |  | 
+| ------ | ------ | 
+| <img src="/assets/home.png" align="top">| <img src="/assets/select_hospital.png" align="top"> | 
+| Home screen to choose user location |  Select and compare hospital UI |   
+|   <img src="/assets/inpatient.png" align="top">| <img src="/assets/outpatient.png" align="top"> | 
+| View chargemaster screen with inpatient filter |  View chargemaster screen with outpatient filter |   
+
 
 ## Branch Policy
 
