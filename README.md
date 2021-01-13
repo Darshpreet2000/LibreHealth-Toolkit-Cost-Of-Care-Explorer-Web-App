@@ -2,7 +2,7 @@
 <p align="center"><img src="assets/app_icon.png" width="150"></p> 
 <h2 align="center"><b>LibreHealth Cost Of Care Web App</b></h2>
 <h4 align="center">Compare Costs Of Medical Procedures Of US Hospitals.</h4>
-<h4 align="center">This project is running at https://librehealth-cost-of-care.web.app</h4>
+<h4 align="center">This project is running at https://librehealth-cost-of-care.web.app and https://cost-of-care.web.app </h4>
 </div>
 
 ## Goal

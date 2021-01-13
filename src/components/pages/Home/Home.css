@@ -1,6 +1,6 @@
 .home-page-wrapper {
   color: #fff;
-  background-image: url(/src/img/patient.jpg);
+  background: #146a5d url(/src/img/patient.jpg) 100% 0 / cover;
   background-position: center;
   background-size: cover;
   background-repeat: no-repeat;
