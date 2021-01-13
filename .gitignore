@@ -9,7 +9,7 @@
 /coverage
 .eslintcache
 debug.log
-
+.firebase
 # production
 /build
 
