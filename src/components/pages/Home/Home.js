@@ -5,7 +5,7 @@ import CardContent from "@material-ui/core/CardContent";
 import Button from "@material-ui/core/Button";
 import { makeStyles } from "@material-ui/core/styles";
 import Card from "@material-ui/core/Card";
-import NavBar from "../../NavBar/NavBar.js";
+import NavBar from "../../layouts/NavBar/NavBar.js";
 import { useHistory } from "react-router-dom";
 import MuiAlert from "@material-ui/lab/Alert";
 import Snackbar from "@material-ui/core/Snackbar";
@@ -13,7 +13,10 @@ function Alert(props) {
   return <MuiAlert elevation={6} variant="filled" {...props} />;
 }
 const useStyles = makeStyles((theme) => ({
-  root: {},
+  searchButton: {
+    margin: "8px",
+    textTransform: "uppercase",
+  },
 }));
 function Home() {
   const classes = useStyles();
@@ -39,7 +42,7 @@ function Home() {
   }
   return (
     <div className="home-page">
-      <div className="hold">
+      <div className="home-page-wrapper">
         <NavBar />
         <h1>Compare Costs Of Medical Procedures Of US Hospitals</h1>
         <h3>
@@ -54,6 +57,7 @@ function Home() {
               <div className="search-hospital">
                 <Button
                   variant="contained"
+                  className={classes.searchButton}
                   color="primary"
                   onClick={searchHospitals}
                 >
@@ -66,7 +70,7 @@ function Home() {
       </div>
 
       <div className="introduction">
-        <h1>Hospital pricing transparency</h1>
+        <h1>Hospital Pricing Transparency</h1>
 
         <hr />
       </div>

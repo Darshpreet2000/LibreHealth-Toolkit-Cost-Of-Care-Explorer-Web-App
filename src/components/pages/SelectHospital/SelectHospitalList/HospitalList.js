@@ -11,6 +11,7 @@ import MuiAlert from "@material-ui/lab/Alert";
 import Snackbar from "@material-ui/core/Snackbar";
 import List from "@material-ui/core/List";
 import { HospitalContext } from "../../../../context/HospitalContext";
+import Api from "../../../../util/Api";
 function Alert(props) {
   return <MuiAlert elevation={6} variant="filled" {...props} />;
 }
@@ -28,7 +29,7 @@ const useStyles = makeStyles((theme) => ({
   floating: {
     position: "fixed",
     bottom: theme.spacing(2),
-    right: theme.spacing(2),
+    right: theme.spacing(2),textTransform: "uppercase"
   },
   extendedIcon: {
     marginRight: theme.spacing(1),
@@ -59,46 +60,15 @@ const HospitalList = (props) => {
   useEffect(() => {
     setHospitalNamesToCompare([]);
     async function fetchData() {
-      var url =
-        "https://gitlab.com/api/v4/projects/22718139/repository/tree?ref=master&path=" +
-        stateName +
-        "&per_page=100&page=";
-      let i = 1;
+      let url = Api.listHospitalApi;
+      url += `${stateName}%2Faddress.json/raw?ref=master`;
+
       try {
-        var response = await fetch(url + i);
+        var response = await fetch(url);
 
         if (response.ok) {
-          var maxLen;
-
-          for (var pair of response.headers.entries()) {
-            if (pair[0] === "x-total-pages") {
-              maxLen = pair[1];
-              break;
-            }
-          }
-
-          response.json().then(async (responseBody) => {
-            i++;
-            while (i <= maxLen) {
-              response = await fetch(url + i.toString());
-              if (response.ok) {
-                response.json().then((arr) => {
-                  responseBody.concat(arr);
-                });
-                i++;
-              } else if (response.status === 404) {
-                throw Error("Error 404 Not Found");
-              } else {
-                throw Error("some other error: " + response.status);
-              }
-            }
-            let tmpArray = [];
-            for (i = 0; i < responseBody.length; i++) {
-              tmpArray.push({
-                name: responseBody[i].name.replace(".json", ""),
-              });
-            }
-            sethospitalNames(tmpArray);
+          response.json().then((responseJson) => {
+            sethospitalNames(responseJson);
             setLoading(false);
           });
         } else if (response.status === 404) {

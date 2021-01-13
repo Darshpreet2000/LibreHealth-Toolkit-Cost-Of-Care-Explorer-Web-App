@@ -1,5 +1,5 @@
 import React from "react";
-import NavBarOrange from "../../NavBar/NavbarOrange";
+import NavBarOrange from "../../layouts/NavBar/NavbarOrange";
 import "./About.css";
 import Button from "@material-ui/core/Button";
 import AppIcon from "../../../img/app_icon.png";

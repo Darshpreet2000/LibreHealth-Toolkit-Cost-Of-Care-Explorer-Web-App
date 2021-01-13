@@ -1,6 +1,8 @@
-.hold {
-  background: #146a5d url(/src/img/patient.jpg) 100% 0 / cover;
+.home-page-wrapper {
   color: #fff;
+  background: #146a5d url(/src/img/patient.jpg) 100% 0 / cover;
+  background-position: center;
+  background-size: cover;
   background-repeat: no-repeat;
   position: relative;
 }
@@ -20,7 +22,7 @@
   top: 50px;
   max-width: 800px;
   margin: 20px auto;
-  padding: 0 20px;
+  padding: 0 8px;
 }
 .search-hospital {
   padding-top: 2%;
@@ -37,6 +39,7 @@
 }
 .introduction {
   position: relative;
+  margin-top: 8px;
   top: 30px;
 }
 .introduction h1 {

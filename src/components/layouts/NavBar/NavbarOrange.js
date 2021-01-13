@@ -1,5 +1,5 @@
 import React from "react";
-import orangeLogo from "../../img/librehealth.png";
+import orangeLogo from "../../../img/librehealth.png";
 import { useState } from "react";
 import "./NavBarOrange.css";
 import { Link } from "react-router-dom";
@@ -28,7 +28,7 @@ function NavBarOrange(props) {
 
   return (
     <nav className="nav-bar-orange">
-      <Link to="/">
+      <Link to="/" style={{ marginBottom: "8px", marginTop: "2px" }}>
         <img src={orangeLogo} alt="logo" />
       </Link>
       <div className="nav-menu-orange" onClick={handleClick}>
@@ -67,13 +67,17 @@ function NavBarOrange(props) {
         <div className="nav-close-menu-orange" onClick={handleClick}>
           <i className="fas fa-times"></i>
         </div>
-
-        <Link to="/about" className="list-item-orange">
-          About Us
+        <Link to="/inpatient-procedures" className="list-item-orange">
+          Inpatient Procedure
         </Link>
-
+        <Link to="/outpatient-procedures" className="list-item-orange">
+          Outpatient Procedure
+        </Link>
         <Link to="/glossary" className="list-item-orange">
           Glossary
+        </Link>
+        <Link to="/about" className="list-item-orange">
+          About Us
         </Link>
       </ul>
     </nav>

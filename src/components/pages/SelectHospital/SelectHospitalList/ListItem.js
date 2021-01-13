@@ -10,11 +10,13 @@ const useStyles = makeStyles((theme) => ({
   chargeMasterButton: {
     margin: "10px",
     fontSize: "0.8em",
+    textTransform: "uppercase",
   },
   compareButton: {
     color: "#fff",
     margin: "10px",
     fontSize: "0.8em",
+    textTransform: "uppercase",
   },
 
   container: {
@@ -24,15 +26,16 @@ const useStyles = makeStyles((theme) => ({
     "text-align": "center",
     "align-self": "center",
     "flex-wrap": "wrap",
-    fontSize: "1.1em",
-    fontWeight: 520,
+    fontSize: "18px",
+    fontWeight: 500,
   },
   address: {
     "text-align": "center",
     "align-self": "center",
     "flex-wrap": "wrap",
-    fontWeight: 420,
-    fontSize: "0.8em",
+    fontWeight: 400,
+    fontSize: "12px",
+    "font-family": "'Montserrat', sans-serif",
   },
 }));
 
@@ -49,7 +52,7 @@ export default function ListItem(props) {
       setDisplaySnackbar("Cannot Compare more than 3 Hospitals");
       return;
     }
-    if (compareButton === false) storedHospitalNames.push(object.name);
+    if (compareButton === false) storedHospitalNames.push(object.Hospital);
     else
       storedHospitalNames.splice(
         storedHospitalNames.indexOf(object.hospitalName),
@@ -65,17 +68,17 @@ export default function ListItem(props) {
     <Grid item xs={12} md={3} sm={4} className={classes.container}>
       <Paper elevation={4} className="list">
         <Typography variant="h6" className={classes.title} gutterBottom>
-          {` ${obj.name}`}
+          {` ${obj.Hospital}`}
         </Typography>
         <Typography
-          variant="subtitle1"
+          variant="subtitle2"
           className={classes.address}
           gutterBottom
         >
-          2801 Debarr Road, Anchorage, AK 99508
+          {` ${obj.Address}, ${obj.City}`}
         </Typography>
         <div className="secondary-item">
-          <Link to={`/selectState=${props.stateName}/hospital=${obj.name}`}>
+          <Link to={`/selectState=${props.stateName}/hospital=${obj.Hospital}`}>
             <Button
               variant="outlined"
               color="secondary"

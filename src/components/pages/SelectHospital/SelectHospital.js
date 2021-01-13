@@ -1,6 +1,6 @@
 import React, { useEffect } from "react";
 import "./SelectHospital.css";
-import NavBarOrange from "../../NavBar/NavbarOrange";
+import NavBarOrange from "../../layouts/NavBar/NavbarOrange";
 import HospitalList from "./SelectHospitalList/HospitalList";
 function SelectHospital(match) {
   const stateName = match.match.params.id;

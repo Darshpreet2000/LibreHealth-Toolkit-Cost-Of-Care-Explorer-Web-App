@@ -1,12 +1,12 @@
 import React, { useEffect, useContext } from "react";
-import NavBarOrange from "../../NavBar/NavbarOrange";
+import NavBarOrange from "../../layouts/NavBar/NavbarOrange";
 import CircularProgress from "@material-ui/core/CircularProgress";
 import { HospitalContext } from "../../../context/HospitalContext";
-import ChargemasterItem from "../ViewChargemaster/ChargemasterItem";
-import Filter from "../../Filter/Filter";
+import Filter from "../../layouts/Filter/Filter";
 import Fab from "@material-ui/core/Fab";
 import { makeStyles } from "@material-ui/core/styles";
-import { Category } from "@material-ui/icons";
+import ChargeMasterList from "../../ChargeMasterList/ChargeMasterList";
+import Api from "../../../util/Api";
 const useStyles = makeStyles((theme) => ({
   root: {
     display: "flex",
@@ -19,6 +19,7 @@ const useStyles = makeStyles((theme) => ({
   },
   floating: {
     position: "fixed",
+    zIndex: "85",
     bottom: theme.spacing(2),
     right: theme.spacing(2),
     color: "#fff",
@@ -44,10 +45,12 @@ function CompareProcedure(match) {
     window.scrollTo(0, 0);
   }, []);
   useEffect(() => {
-    let baseUrl = `https://raw.githubusercontent.com/Darshpreet2000/API/master/${stateName}`;
     let arrayOfChargemaster = [];
     arrayOfHospitalName.forEach(async function (object) {
-      const api = baseUrl + `/${object}.json`;
+      const api =
+        Api.viewChargeMasterApi +
+        `${stateName}%2F${object}.json/raw?ref=master`;
+
       try {
         let response = await fetch(api);
         if (response.ok) {
@@ -103,15 +106,15 @@ function CompareProcedure(match) {
       });
     }
 
-    if (Category === "Standard") {
+    if (category === "Inpatient Procedure") {
       for (let i = newList.length - 1; i >= 0; --i) {
-        if (newList[i].Category === "DRG") {
+        if (newList[i].Category === "Outpatient Procedure") {
           newList.splice(i, 1);
         }
       }
-    } else if (category === "DRG") {
+    } else if (category === "Outpatient Procedure") {
       for (let i = newList.length - 1; i >= 0; --i) {
-        if (newList[i].Category === "Standard") {
+        if (newList[i].Category === "Inpatient Procedure") {
           newList.splice(i, 1);
         }
       }
@@ -193,7 +196,7 @@ function CompareProcedure(match) {
           handleFilterClick={handleFilterClick}
           handleFilterValueChanges={handleFilterValueChanges}
         />
-        <div className={openFilter ? "list-ui-none" : "list-ui"}>
+        <div className="list-ui">
           <div className="filter-floating-action-button">
             <Fab
               variant="extended"
@@ -201,7 +204,7 @@ function CompareProcedure(match) {
               className={classes.floating}
               onClick={handleFilterClick}
             >
-              <i className="fas fa-filter"></i>
+              <i style={{ marginRight: "4px" }} className="fas fa-filter"></i>
               Filter
             </Fab>
           </div>
@@ -217,23 +220,10 @@ function CompareProcedure(match) {
               Start typing procedure to search
             </h3>
           )}
-          {listOfData.length === 0 && searchText.length !== 0 && (
-            <h3
-              style={{
-                display: "flex",
-                alignItems: "center",
-                justifyContent: "center",
-                height: "50vh",
-                textAlign: "center",
-              }}
-            >
-              We could not find results matching your requirement. Try changing
-              filter or search query
-            </h3>
+
+          {searchText.length !== 0 && (
+            <ChargeMasterList listOfData={listOfData} />
           )}
-          {listOfData.map(function (obj, i) {
-            return <ChargemasterItem object={obj} key={i} />;
-          })}
         </div>
       </div>
     </div>

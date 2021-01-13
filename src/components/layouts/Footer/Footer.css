@@ -1,5 +1,5 @@
 .footer {
-  background: lightgray;
+  background: rgb(238, 238, 238);
   line-height: 20px;
   border-top: 1px solid gray;
   padding-left: 3%;
@@ -7,15 +7,15 @@
 .content {
   width: 40%;
   text-align: justify;
-  color: gray;
   color: rgba(0, 0, 0, 0.54);
 }
 
-.content h5,
-h4 {
+.content p {
   padding-bottom: 0;
   margin-bottom: 8px;
   margin-top: 8px;
+  font-size: 14px;
+  font-weight: 500;
 }
 @media screen and (max-width: 800px) {
   .content {
