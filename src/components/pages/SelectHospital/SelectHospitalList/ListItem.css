@@ -1,0 +1,13 @@
+.secondary-item {
+  padding: 8px;
+  display: flex;
+
+  flex-wrap: wrap;
+}
+.list {
+  display: flex;
+  width: 100%;
+  padding: 12px;
+  justify-content: space-between;
+  flex-direction: column;
+}

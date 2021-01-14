@@ -1,0 +1,8 @@
+.select-hospital h1,
+h2 {
+  text-align: center;
+}
+.hospital-content {
+  margin: 10px auto;
+  max-width: 1100px;
+}

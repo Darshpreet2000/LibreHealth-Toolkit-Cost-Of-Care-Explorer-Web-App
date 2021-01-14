@@ -1,0 +1,9 @@
+.glossary-container {
+  padding: 0px 8px;
+  max-width: 1200px;
+  margin: 8px auto;
+}
+#glossary-button {
+  margin: 8px;
+  text-decoration: none;
+}

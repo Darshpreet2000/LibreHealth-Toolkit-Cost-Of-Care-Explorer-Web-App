@@ -1,0 +1,52 @@
+.home-page-wrapper {
+  color: #fff;
+  background: #146a5d url(/src/img/patient.jpg) 100% 0 / cover;
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  position: relative;
+}
+.home-page h1,
+.home-page h3 {
+  padding: 2.5%;
+  color: white;
+  text-align: center;
+}
+.home-page h2,
+.home-page p {
+  text-align: center;
+  padding: 1%;
+}
+.state-select {
+  position: relative;
+  top: 50px;
+  max-width: 800px;
+  margin: 20px auto;
+  padding: 0 8px;
+}
+.search-hospital {
+  padding-top: 2%;
+  text-align: center;
+}
+.intro-data {
+  display: block;
+  max-width: 680px;
+  margin: 50px auto;
+}
+.intro-data p {
+  text-align: left;
+  padding: 0 20px;
+}
+.introduction {
+  position: relative;
+  margin-top: 8px;
+  top: 30px;
+}
+.introduction h1 {
+  color: black;
+  text-align: left;
+  font-size: x-large;
+  font-family: "Montserrat", sans-serif;
+  letter-spacing: normal;
+  margin: 0 0 16px;
+}
